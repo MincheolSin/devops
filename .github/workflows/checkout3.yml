@@ -59,7 +59,7 @@ jobs:
     - name: Docker run
       run: |
         sudo docker stop devops_app1_1 && sudo docker rm devops_app1_1
-        sudo docker run -d --network devops_my_bridge_network --name devops_app1_1 --restart always ${{ secrets.USERNAME }}/devops:${{ env.VERSION }}
+        sudo docker run -d --network devops_my_bridge_network --name devops_app1_1 --restart always ${{ secrets.USERNAME }}/devops:0.0.1
         sudo docker stop devops_app2_1 && sudo docker rm devops_app2_1
-        sudo docker run -d --network devops_my_bridge_network --name devops_app2_1 --restart always ${{ secrets.USERNAME }}/devops:${{ env.VERSION }}
+        sudo docker run -d --network devops_my_bridge_network --name devops_app2_1 --restart always ${{ secrets.USERNAME }}/devops:0.0.1
         sudo docker image prune -af
