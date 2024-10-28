@@ -43,7 +43,7 @@ jobs:
     
     # 5. Docker Hub 이미지 푸시
     - name: docker Hub push
-      run: docker push ${{ secrets.USERNAME }}/devops:${{ env.VERSION }}
+      run: docker push ${{ secrets.USERNAME }}/devops:0.0.1
 
   deploy:
     needs: build-docker-image  # build 후에 실행되도록 정의
